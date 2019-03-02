@@ -1,4 +1,4 @@
-import Modal from '../src/Modal' // 'react-modal-view'
+import Modal from '../lib/Modal' // 'react-modal-view'
 import ReactDOM from 'react-dom'
 import React, { Component } from 'react'
 
