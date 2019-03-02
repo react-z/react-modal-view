@@ -1,5 +1,7 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 export default class Modal extends React.Component {
 
@@ -88,12 +90,11 @@ export default class Modal extends React.Component {
   render() {
     const { visible } = this.state
     let closeBtn = (
-      <div className='overlay-top'>
-        <div className='overlay-close' title='Close'
-             onClick={this.handleCloseBtnClick.bind(this)}>
+      <ModalTop>
+        <ModalClose onClick={this.handleCloseBtnClick.bind(this)}>
           &times;
-        </div>
-      </div>
+        </ModalClose>
+      </ModalTop>
     )
     if (this.props.closable === false) {
       closeBtn = (<div></div>)
@@ -101,13 +102,54 @@ export default class Modal extends React.Component {
     let closeClass = `overlay ${visible ? '' : ' hidden'}`
 
     return (
-      <div ref='overlay' className={closeClass}
-           onClick={this.handleOverlayClick.bind(this)}>
+      <ModalWrapper ref='overlay' visible={visible} onClick={this.handleOverlayClick.bind(this)}>
         {closeBtn}
-        <div className='overlay-content'>
+        <ModalContent>
           {this.props.children}
-        </div>
-      </div>
+        </ModalContent>
+      </ModalWrapper>
     )
   }
 }
+
+const ModalWrapper = styled.div`
+  opacity: ${props => props.visible ? 1 : 0};
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  z-index: 100;
+`
+
+const ModalTop = styled.div`
+  margin: 5% auto;
+  position: relative;
+  top: 5rem;
+  max-width: 90%;
+`
+const ModalContent = styled.div`
+  background-color: #fff;
+  box-shadow: 0.1rem 0.1rem 3rem rgba(0, 0, 0, 0.25);
+  margin-bottom: 4%;
+  margin: 0 auto;
+  padding: 22px 30px;
+  position: relative;
+  top: 5rem;
+  max-width: 90%;
+`
+
+const ModalClose = styled.div`
+  box-sizing: content-box;
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  cursor: pointer;
+  z-index: 100;
+  padding: 0;
+  font-size: 30px;
+  line-height: 1em;
+  border-top-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+`

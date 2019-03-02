@@ -1,6 +1,6 @@
-import Modal from '../lib/Modal' // 'react-modal-view'
+import Modal from '../src/Modal' // 'react-modal-view'
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 class TestComponent extends Component {
   render () {

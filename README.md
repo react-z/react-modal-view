@@ -2,31 +2,25 @@
 
 [![npm version](https://badge.fury.io/js/react-modal-view.svg)](https://badge.fury.io/js/react-modal-view)
 
-![](https://raw.githubusercontent.com/StevenIseki/react-modal-view/master/example/screenshot.png)
+![](https://raw.githubusercontent.com/StevenIseki/react-modal-view/master/example/screenshot.gif)
 
-a simple react modal component
+A simple react modal component
 
 ## Install
 
 ``` js
-npm install react-modal-view --save
+yarn add react-modal-view
 ```
-
-## Versions
-
-#### `1.0.0` uses React `^0.15.1`
 
 ## Use
 
 ``` js
 import Modal from 'react-modal-view'
 import ReactDOM from 'react-dom'
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
 class TestComponent extends Component {
-
   render () {
-    /* switch visible prop to close or hide in your component */
     return (
       <div>
         <Modal visible={true}>
@@ -38,19 +32,28 @@ class TestComponent extends Component {
   }
 }
 
-ReactDOM.render( <TestComponent />, document.getElementById('root') )
+ReactDOM.render(
+  <TestComponent />,
+  document.getElementById('root')
+)
 ```
 
 ## Styles
 
-react-modal-view can be used with your own custom styles. A minimal [modal.css](https://github.com/StevenIseki/react-modal-view/blob/master/example/public/modal.css) style sheet is included as a guide.
+Uses styled-components 💅 for the base styling.
 
 ## Development
+    yarn
+    npm run dev
 
-    npm install
+## Build
+    yarn
     npm run build
-    npm test
-    npm start
+    npm login
+    npm version patch
+    git add -A
+    git push origin master
+    npm publish
 
 ## License
 

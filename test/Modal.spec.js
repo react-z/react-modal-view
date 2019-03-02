@@ -1,13 +1,9 @@
-import expect from 'expect'
 import test from 'tape'
 import React from 'react'
-import { shallow, mount } from 'enzyme'
-import { setupJsdom } from './jsdom'
+import { mount } from 'enzyme'
 import Modal from '../src/Modal'
 
 test('Modal component', (t) => {
-  setupJsdom()
-
   const wrapper = mount(
       <Modal visible={true}>
         <h2>Hello from inside your modal</h2>
