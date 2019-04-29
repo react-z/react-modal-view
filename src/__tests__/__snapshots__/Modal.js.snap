@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal renders correctly and matches snapshot 1`] = `
+<div
+  className="sc-bdVaJa gAfaOh"
+  onClick={[Function]}
+>
+  <div
+    className="sc-bwzfXH cDMJGq"
+  >
+    <div
+      className="sc-bxivhb erGilO"
+      onClick={[Function]}
+    >
+      ×
+    </div>
+  </div>
+  <div
+    className="sc-htpNat ifZcNp"
+  >
+    <p>
+      This is a paragraph.
+    </p>
+  </div>
+</div>
+`;
